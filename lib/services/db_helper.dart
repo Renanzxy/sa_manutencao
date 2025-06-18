@@ -99,18 +99,18 @@ class DbHelper {
 
   // métodos crud para manutencao
   //Create Consulta
-  Future<int> insertConsulta(Manutencao manutencao) async{
+  Future<int> insertManutencao(Manutencao manutencao) async{
     final db = await database;
     return await db.insert("manutencoes", manutencao.toMap());
   }
 
   //Get Consulta -> By Pet
-  Future<List<Manutencao>> getConsultaByPetId(int petId) async{
+  Future<List<Manutencao>> getManutencaoByVeiculoId(int veiculoId) async{
     final db = await database;
     final List<Map<String,dynamic>> maps = await db.query(
       "consultas",
       where: "pet_id = ?",
-      whereArgs: [petId],
+      whereArgs: [veiculoId],
       orderBy: "data_hora ASC" //ordenar por data e hora da Consulta
     ); //select from consultas where pet_id = ?, Pet_id, order by data_hora ASC
     //converter a Maps em Obj
