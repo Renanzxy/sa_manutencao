@@ -28,7 +28,7 @@ class _HomeScreenState extends State<HomeScreen>{
       _isLoading = true;
     });
     try {
-      _veiculos = await _veiculoController.readPets();
+      _veiculos = await _veiculoController.readVeiculos();
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text("Exception: $e")));
@@ -64,7 +64,7 @@ class _HomeScreenState extends State<HomeScreen>{
               }),
             ),
       floatingActionButton: FloatingActionButton(
-        tooltip: "Adicionar Novo Pet",
+        tooltip: "Adicionar Novo Veiculo",
         child: Icon(Icons.add),
         onPressed: () async  {
           await Navigator.push(context, 

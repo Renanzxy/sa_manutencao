@@ -7,12 +7,12 @@ class ManutencaoController {
   //métodos
 
   //create
-  createConsulta(Manutencao manutencao) async{
+  createManutencao(Manutencao manutencao) async{
     return _dbHelper.insertmanutencao(manutencao);
   }
 
   //readManutencaoByPet
-  readConsultaByPet(int veiculoId) async {
+  readManutencaoByPet(int veiculoId) async {
     return _dbHelper.getManutencaoByVeiculoId(manutencaoId);
   }
 

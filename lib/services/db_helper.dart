@@ -109,7 +109,7 @@ class DbHelper {
     final db = await database;
     final List<Map<String,dynamic>> maps = await db.query(
       "consultas",
-      where: "pet_id = ?",
+      where: "veiculo_id = ?",
       whereArgs: [veiculoId],
       orderBy: "data_hora ASC" //ordenar por data e hora da Consulta
     ); //select from consultas where pet_id = ?, Pet_id, order by data_hora ASC
